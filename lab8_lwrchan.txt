@@ -1,0 +1,39 @@
+lwrchan@ops445Linux:~/ops445/lab8$ ansible-playbook -i hosts config_ops445.yml
+
+PLAY [lwrchan] *******************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************
+ok: [lwrchan]
+
+TASK [update apache (httpd)] *****************************************************************************************
+ok: [lwrchan]
+
+TASK [install EPEL repository if not already] ************************************************************************
+ok: [lwrchan]
+
+TASK [remove 'tree' package] *****************************************************************************************
+changed: [lwrchan]
+
+TASK [set hostname to Seneca ID] *************************************************************************************
+ok: [lwrchan]
+
+TASK [create new user with Seneca ID] ********************************************************************************
+ok: [lwrchan]
+
+TASK [add authorized key for SSH access] *****************************************************************************
+ok: [lwrchan]
+
+TASK [create lab directories] ****************************************************************************************
+changed: [lwrchan] => (item=lab1)
+changed: [lwrchan] => (item=lab2)
+changed: [lwrchan] => (item=lab3)
+changed: [lwrchan] => (item=lab4)
+changed: [lwrchan] => (item=lab5)
+changed: [lwrchan] => (item=lab6)
+changed: [lwrchan] => (item=lab7)
+changed: [lwrchan] => (item=lab8)
+
+PLAY RECAP ***********************************************************************************************************
+lwrchan                    : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+lwrchan@ops445Linux:~/ops445/lab8$ 
